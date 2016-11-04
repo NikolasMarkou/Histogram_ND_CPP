@@ -1,6 +1,22 @@
+
 #pragma once
 #ifndef HISTOGRAM_ND_HPP
 #define HISTOGRAM_ND_HPP
+
+/*
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
 
 #include <cmath>
 #include <vector>
@@ -18,31 +34,14 @@
 //		Histogram::HistogramUniformND_<double, int, float>(
 //			MinMaxBins<int>{0,10,10},
 //			MinMaxBins<float>{0,10,15});
+// histogram2d.Inc(1, 2.0f);
+// histogram2d.Inc(3, 4.0f);
+// histogram2d.Inc(5, 5.0f);
+// histogram2d.Inc(15, 25.0f);
+// histogram2d.Inc(25, 35.0f);
+// histogram2d.Inc(25, 35.0f);
 //
-// histogram.Inc(5, 5.0f);
-//
-// auto value = histogram.Value(5, 5.0f);
-//=========================================================================
-// Example 1
-//
-// 4-d histogram with double precision, one dimension is int,
-//		other is float, other is double and final is uint8_t
-// dimension 0 : takes integer with min 0, max 100 and 10 buckets
-// dimension 1 : takes float with min 0, max 100 and 15 buckets
-// dimension 2 : takes double with min 0, max 1000 and 100 buckets
-// dimension 3 : takes uint8_t with min 0, max 255 and 5 buckets
-//
-// auto histogram4d =
-//		Histogram::HistogramUniformND_<double, int, float, double, uint8_t>(
-//			MinMaxBins<int>{0,100,10},
-//			MinMaxBins<float>{0,100,15},
-//			MinMaxBins<double>{0,100,15},
-//			MinMaxBins<uint32_t>{0,100,15},);
-//
-// histogram.Inc(5, 50.0f, 88.0d, 1);
-//
-// auto value = histogram.Value(5, 50.0f, 88.0d, 1);
-//
+// auto value = histogram2d.Value(5, 5.0f);
 //=========================================================================
 namespace Histogram
 {
