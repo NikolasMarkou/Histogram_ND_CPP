@@ -55,7 +55,7 @@ auto histogram4d =
 			MinMaxBins<int>{0,100,10},
 			MinMaxBins<float>{0,100,15},
 			MinMaxBins<double>{0,100,15},
-			MinMaxBins<uint32_t>{0,100,15},);
+			MinMaxBins<uint32_t>{0,100,15});
 
 histogram4d.Inc(5, 50.0f, 88.0d, 1);
 
@@ -74,7 +74,7 @@ auto histogram3dRGB =
 		Histogram::HistogramUniformND_<float, uint8_t, uint8_t, uint8_t>(
 			MinMaxBins<uint8_t>{0,255,10},
 			MinMaxBins<uint8_t>{0,255,10},
-			MinMaxBins<uint8_t>{0,255,10},);
+			MinMaxBins<uint8_t>{0,255,10});
 
 histogram3dRGB.Inc(100, 100, 200);
 
