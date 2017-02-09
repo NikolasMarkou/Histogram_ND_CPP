@@ -84,7 +84,7 @@ namespace Histogram
 				}
 
 				return uint32_t(std::round(
-						double(value) * double(m.bins - 1) / double(m.max - m.min)));
+						double(value - m.min) * double(m.bins - 1) / double(m.max - m.min)));
 			};
 	}
 
