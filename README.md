@@ -55,7 +55,7 @@ auto histogram4d =
 			MinMaxBins<int>{0,100,10},
 			MinMaxBins<float>{0,100,15},
 			MinMaxBins<double>{0,100,15},
-			MinMaxBins<uint32_t>{0,100,15});
+			MinMaxBins<uint8_t>{0,100,15});
 
 histogram4d.Inc(5, 50.0f, 88.0d, 1);
 
