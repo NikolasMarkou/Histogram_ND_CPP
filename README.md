@@ -21,7 +21,7 @@ histogram1d
   .Inc(1990.0f)
   .Inc(3000.0f)
   .Inc(300000.0f)
-  .Normalize()
+  .Normalize();
 
 auto value = histogram1d.Value(20.0f);
 ```
