@@ -65,13 +65,16 @@ namespace Histogram
 			throw std::invalid_argument("min should be < max");
 		}
 
-		if (m.bins <= 0)
+		if (m.noBins <= 0)
 		{
-			throw std::invalid_argument("bins must be > 0");
+			throw std::invalid_argument("noBins must be > 0");
 		}
 
+		auto minMaxDiff = double(m.max - m.min);
+		auto multiplier = double(m.noBins) / minMaxDiff;
+
 		return
-			[m](Type value)
+			[m, multiplier](Type value)
 			{
 				if (value <= m.min)
 				{
@@ -80,11 +83,11 @@ namespace Histogram
 
 				if (value >= m.max)
 				{
-					return uint32_t(m.bins - 1);
+					return uint32_t(m.noBins - 1);
 				}
 
-				return uint32_t(std::round(
-						double(value - m.min) * double(m.bins - 1) / double(m.max - m.min)));
+				return uint32_t(std::floor(
+						(value - m.min) * multiplier));
 			};
 	}
 
