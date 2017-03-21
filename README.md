@@ -51,7 +51,7 @@ Four dimensional histogram with double precision, one dimension is int, other is
 
 ```cpp
 auto histogram4d =
-		Histogram::HistogramUniformND_<double, int, float, double, uint8_t>(
+		HistogramUniformND_<double, int, float, double, uint8_t>(
 			MinMaxBins<int>{0,100,10},
 			MinMaxBins<float>{0,100,15},
 			MinMaxBins<double>{0,100,15},
@@ -71,7 +71,7 @@ Three dimensional color histogram, single precision
 
 ```cpp
 auto histogram3dRGB =
-		Histogram::HistogramUniformND_<float, uint8_t, uint8_t, uint8_t>(
+		HistogramUniformND_<float, uint8_t, uint8_t, uint8_t>(
 			MinMaxBins<uint8_t>{0,255,10},
 			MinMaxBins<uint8_t>{0,255,10},
 			MinMaxBins<uint8_t>{0,255,10});
